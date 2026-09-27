@@ -2,28 +2,23 @@
 
 int main()
 {
-    int n, correct = 1;
+    int n, count = 0;
     printf("Enter number:");
     scanf("%d", &n);
-    if (n <= 1)
+    for (int i = 1; i <= n; i++)
     {
-        correct = 0;
-    }
-    for (int i = 2; i <= (n - 1); i++)
-    {
-        if (n % 2 == 0)
+        if (n % i == 0)
         {
-            correct = 0;
-            break;
+            count++;
         }
     }
-    if (correct == 1)
+    if (count == 2)
     {
-        printf("Yes, %d is a prime number", n);
+        printf("%d is prime number", n);
     }
     else
     {
-        printf("No, %d is not a prime number", n);
+        printf("%d is not a prime number", n);
     }
     return 0;
 }
